@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN" "http://java.sun.com/j2ee/dtds/web-app_2_2.dtd">
+<web-app id="WebApp">
+	<display-name>TuneWise</display-name>
+	<context-param>
+        <param-name>itunes</param-name>
+        <param-value>c:/itunes.xml</param-value>
+    </context-param>
+
+	<servlet>
+		<servlet-name>TuneWiseHTML</servlet-name>
+		<display-name>TuneWiseHTML</display-name>
+		<servlet-class>com.philemonworks.typewise.html.PageServlet</servlet-class>
+		<init-param>
+			<param-name>application</param-name>
+			<param-value>tunewise.Browser</param-value>
+		</init-param>
+		<init-param>
+			<param-name>traffic</param-name>
+			<param-value>com.philemonworks.typewise.tools.TrafficStatistics</param-value>
+		</init-param>			
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TuneWiseHTML</servlet-name>
+		<url-pattern>/html</url-pattern>
+	</servlet-mapping>		
+	
+	<servlet>
+		<servlet-name>TuneWise</servlet-name>
+		<display-name>TuneWise</display-name>
+		<servlet-class>com.philemonworks.typewise.server.ApplicationServlet</servlet-class>
+		<init-param>
+			<param-name>application</param-name>
+			<param-value>tunewise.Browser</param-value>
+		</init-param>	
+		<init-param>
+			<param-name>traffic</param-name>
+			<param-value>com.philemonworks.typewise.tools.TrafficStatistics</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TuneWise</servlet-name>
+		<url-pattern>/browser</url-pattern>
+	</servlet-mapping>
+
+	<!-- Tunewise Wicket -->
+    <servlet>
+        <servlet-name>WTunesApplication</servlet-name>
+        <servlet-class>wicket.protocol.http.WicketServlet</servlet-class>
+        <init-param>
+          <param-name>applicationClassName</param-name>
+          <param-value>tunewise.wicket.WTunesApplication</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WTunesApplication</servlet-name>
+        <url-pattern>/wtunes/*</url-pattern>
+    </servlet-mapping>
+
+	<!-- DEBUGGING XTRA -->
+	<servlet>
+		<servlet-name>SelfDiagnoseServlet</servlet-name>
+		<display-name>SelfDiagnoseServlet</display-name>
+		<servlet-class>com.philemonworks.selfdiagnose.SelfDiagnoseServlet</servlet-class>	
+	</servlet>
+	<servlet-mapping>
+			<servlet-name>SelfDiagnoseServlet</servlet-name>
+			<url-pattern>/selfdiagnose/*</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>

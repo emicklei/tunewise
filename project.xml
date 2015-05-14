@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CHANGES -->
+<!-- include commons-io in war -->
+<project>
+	<pomVersion>3</pomVersion>
+	<groupId>philemon</groupId>
+	<id>tunewise</id>
+	<currentVersion>1.0.0</currentVersion>
+	<package>tunewise.*</package>
+	<name>TuneWise</name>
+	<description>TypeWise Access to a local iTunes Library</description>
+	
+	<organization>
+		<name>Philemon</name>
+		<url>http://www.philemonworks.com/</url>
+		<logo>http://www.philemonworks.com/images/logo_small.jpg</logo>
+	</organization>
+	<inceptionYear>2006</inceptionYear>
+	
+	<url>https://jvds.xs4all.nl/projects/philemon/tunewise</url>
+	<siteAddress>jvds.xs4all.nl</siteAddress>
+	<siteDirectory>/opt/www/projects/philemon/tunewise</siteDirectory>
+	
+	<repository>
+		<connection>
+			scm:svn:https://jvds.xs4all.nl/svn/repos2:tunewise</connection>
+	</repository>
+	
+	<developers>
+		<developer>
+			<name>Ernest Micklei</name>
+			<id>ernest</id>
+			<email>ernest.micklei@gmail.com</email>
+			<organization>PhilemonWorks</organization>
+		</developer>
+	</developers>
+	
+	<dependencies>
+		<dependency>
+			<id>log4j</id>
+			<version>1.2.8</version>
+			<properties>
+				<war.bundle>true</war.bundle>
+			</properties>
+		</dependency>
+		
+		<dependency>
+			<groupId>servletapi</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.4-20040521</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>philemon</groupId>
+			<artifactId>philemon-selfdiagnose</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<properties>
+				<war.bundle>true</war.bundle>
+			</properties>
+		</dependency>
+		
+		<dependency>
+			<groupId>philemon</groupId>
+			<artifactId>philemon-typewise</artifactId>
+			<version>1.0-rc90</version>
+			<properties>
+				<war.bundle>true</war.bundle>
+			</properties>
+		</dependency>
+		
+		<dependency>
+			<groupId>philemon</groupId>
+			<artifactId>philemon-utils</artifactId>
+			<version>1.0.1</version>
+			<properties>
+				<war.bundle>true</war.bundle>
+			</properties>
+		</dependency>
+		
+	</dependencies>
+	
+	<build>
+		<defaultGoal name="make"/>
+		<nagEmailAddress>ernest.micklei@gmail.com</nagEmailAddress>
+		<sourceDirectory>${basedir}/src/main/java</sourceDirectory>
+		<unitTestSourceDirectory>
+			${basedir}/src/test/java</unitTestSourceDirectory>
+		
+		<resources>
+			<resource>
+				<directory>${basedir}/src/main/config</directory>
+				<includes>
+					<include>**/*.properties</include>
+				</includes>
+			</resource>
+		</resources>
+		
+		<!-- Unit test cases -->
+		<unitTest>
+			<resources>
+				<resource>
+					<directory>${basedir}/src/test</directory>
+					<includes>
+						<include>**/*</include>
+					</includes>
+					<excludes>
+						<exclude>**/*.java</exclude>
+					</excludes>
+				</resource>
+				<resource>
+					<directory>${basedir}/src/main/config</directory>
+					<includes>
+						<include>**/*</include>
+					</includes>
+				</resource>
+			</resources>
+			<includes>
+				<include>**/*Test.java</include>
+			</includes>
+		</unitTest>
+		
+	</build>
+	
+	<reports>
+		<report>maven-jdepend-plugin</report>
+		<report>maven-javadoc-plugin</report>
+		<report>maven-jxr-plugin</report>
+		<report>maven-junit-report-plugin</report>
+		<!-- report>maven-jcoverage-plugin</report -->
+		<report>maven-tasklist-plugin</report>
+		<report>maven-pmd-plugin</report>
+		<report>maven-cruisecontrol-plugin</report>
+		<report>maven-umlx-plugin</report>
+	</reports>
+	
+</project>

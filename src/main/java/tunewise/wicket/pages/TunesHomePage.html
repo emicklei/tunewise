@@ -1,0 +1,53 @@
+<wicket:extend>
+<form wicket:id="tunesForm">
+<table width="1200">
+	<tr>
+		<th width="10%"></th>
+		<th width="20%"></th>
+		<th width="20%" wicket:id="artistHeader"></th>
+		<th width="25%" wicket:id="albumHeader"></th>
+		<th width="25%" wicket:id="genreHeader"></th>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>
+			<select wicket:id="artists"></select>
+		</td>
+		<td>
+			<select wicket:id="albums"></select>
+		</td>
+		<td>
+			<select wicket:id="genres"></select>
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>Name</td>
+		<td>Artist</td>
+		<td>Album</td>
+		<td>Genre</td>
+	</tr>
+	<tr wicket:id="tracksForGenre"> 
+
+		<td>
+    		<a wicket:id = "link">Details</a> | 
+    		<a wicket:id = "addToPlaylist">Add to playlist</a>
+		</td>
+		<td>
+  			<span wicket:id="name">Quote goes here</span>
+		</td>
+		<td>
+			<span wicket:id="artist">Quote goes here</span>
+		</td>
+		<td>
+			<span wicket:id="album">Quote goes here</span>
+		</td>
+		<td>
+			<span wicket:id="genre">Quote goes here</span>
+		</td>
+		
+	</tr>
+</table>
+</form>
+</wicket:extend>

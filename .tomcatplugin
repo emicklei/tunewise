@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tomcatProjectProperties>
+    <rootDir>/webapp</rootDir>
+    <exportSource>false</exportSource>
+    <reloadable>true</reloadable>
+    <redirectLogger>true</redirectLogger>
+    <updateXml>true</updateXml>
+    <warLocation>\\ntserver\c$\Program Files\Apache Software Foundation\Tomcat 5.5\temp\tunewise.war</warLocation>
+    <extraInfo></extraInfo>
+    <webPath>/tunewise</webPath>
+    <webClassPathEntries>
+        <webClassPathEntry>/tunewise/webapp/WEB-INF/classes</webClassPathEntry>
+        <webClassPathEntry>MAVEN_REPO/geronimo-spec/jars/geronimo-spec-servlet-2.4-rc2.jar</webClassPathEntry>
+        <webClassPathEntry>MAVEN_REPO/log4j/jars/log4j-1.2.8.jar</webClassPathEntry>
+        <webClassPathEntry>MAVEN_REPO/philemon/jars/philemon-selfdiagnose-1.0-SNAPSHOT.jar</webClassPathEntry>
+        <webClassPathEntry>MAVEN_REPO/philemon/jars/philemon-typewise-1.0-rc90.jar</webClassPathEntry>
+        <webClassPathEntry>MAVEN_REPO/philemon/jars/philemon-utils-1.0.1.jar</webClassPathEntry>
+    </webClassPathEntries>
+</tomcatProjectProperties>
